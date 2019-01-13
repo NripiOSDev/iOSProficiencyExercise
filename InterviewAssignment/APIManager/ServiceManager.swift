@@ -36,18 +36,21 @@ class ServiceManager: NSObject {
         return NSMutableURLRequest()
     }
     
-    func getDataFromApi(contenturl: String, postCompleted : @escaping (_ jsonDict:[String: AnyObject], _ msg: NSInteger) -> ()) {
+    func getallDataFromApi(contenturl: String, postCompleted : @escaping ( _ jsonDict:[String: AnyObject],  _ msg: NSInteger) -> ()) {
+        
         
         let urlRequest = CreateGetUrlRequest(contenturl)
         let task = sharedSession.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             if error != nil{
                 //Handle error
+                
             }else{
                 let httpResponse = response as! HTTPURLResponse
-                    if let dataExist = data{
+                
+                if let dataExist = data{
                     let responseData: Any?
                     do{
-                        if httpResponse.statusCode == 200{
+                        if httpResponse.statusCode == 200 {
                             responseData = try JSONSerialization.jsonObject(with: dataExist, options: .allowFragments)
                             if let responseDictData = responseData as? [String : AnyObject]{
                                 postCompleted(responseDictData, httpResponse.statusCode)

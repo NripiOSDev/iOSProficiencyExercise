@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9282FE5B21EB67190098883A /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9282FE5A21EB67190098883A /* listTableViewCell.swift */; };
 		929E8D0B21EB363A000769F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D0A21EB363A000769F6 /* AppDelegate.swift */; };
 		929E8D0D21EB363A000769F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D0C21EB363A000769F6 /* ViewController.swift */; };
 		929E8D1321EB363A000769F6 /* InterviewAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D1121EB363A000769F6 /* InterviewAssignment.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 		0104A293EB2994A9F0A81532 /* Pods-InterviewAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewAssignment.release.xcconfig"; path = "Target Support Files/Pods-InterviewAssignment/Pods-InterviewAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		15D17904621B4DF748A44071 /* Pods-InterviewAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewAssignment.debug.xcconfig"; path = "Target Support Files/Pods-InterviewAssignment/Pods-InterviewAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		548419CF304748A8B0FD9E80 /* Pods_InterviewAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9282FE5A21EB67190098883A /* listTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		929E8D0721EB363A000769F6 /* InterviewAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929E8D0A21EB363A000769F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929E8D0C21EB363A000769F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		929E8D3E21EB3AB9000769F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9282FE5A21EB67190098883A /* listTableViewCell.swift */,
 				929E8D0C21EB363A000769F6 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				929E8D1321EB363A000769F6 /* InterviewAssignment.xcdatamodeld in Sources */,
+				9282FE5B21EB67190098883A /* listTableViewCell.swift in Sources */,
 				929E8D0D21EB363A000769F6 /* ViewController.swift in Sources */,
 				929E8D0B21EB363A000769F6 /* AppDelegate.swift in Sources */,
 				929E8D4121EB3C70000769F6 /* ServiceManager.swift in Sources */,
