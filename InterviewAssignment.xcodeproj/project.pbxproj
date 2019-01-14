@@ -16,6 +16,9 @@
 		929E8D2321EB363A000769F6 /* InterviewAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D2221EB363A000769F6 /* InterviewAssignmentTests.swift */; };
 		929E8D2E21EB363A000769F6 /* InterviewAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D2D21EB363A000769F6 /* InterviewAssignmentUITests.swift */; };
 		929E8D4121EB3C70000769F6 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D4021EB3C70000769F6 /* ServiceManager.swift */; };
+		92F5B2EE21ED03A0009A902E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5B2ED21ED03A0009A902E /* Constant.swift */; };
+		92F5B2F121ED03F0009A902E /* CanadaInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5B2F021ED03F0009A902E /* CanadaInfoModel.swift */; };
+		92F5B2F321ED04CB009A902E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 92F5B2F221ED04CB009A902E /* placeholder.png */; };
 		CD9D46780024ABD01CF1F785 /* Pods_InterviewAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548419CF304748A8B0FD9E80 /* Pods_InterviewAssignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		929E8D2D21EB363A000769F6 /* InterviewAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAssignmentUITests.swift; sourceTree = "<group>"; };
 		929E8D2F21EB363A000769F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		929E8D4021EB3C70000769F6 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		92F5B2ED21ED03A0009A902E /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		92F5B2F021ED03F0009A902E /* CanadaInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanadaInfoModel.swift; sourceTree = "<group>"; };
+		92F5B2F221ED04CB009A902E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 		929E8D0921EB363A000769F6 /* InterviewAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				92F5B2EF21ED03AD009A902E /* Model */,
+				92F5B2EC21ED0334009A902E /* Constant */,
 				929E8D3F21EB3AE1000769F6 /* AppDelegate */,
 				929E8D3B21EB39A2000769F6 /* APIManager */,
 				929E8D3E21EB3AB9000769F6 /* ViewControllers */,
@@ -163,6 +171,7 @@
 		929E8D3D21EB3A07000769F6 /* MiscFiles */ = {
 			isa = PBXGroup;
 			children = (
+				92F5B2F221ED04CB009A902E /* placeholder.png */,
 				929E8D1421EB363A000769F6 /* Assets.xcassets */,
 				929E8D1121EB363A000769F6 /* InterviewAssignment.xcdatamodeld */,
 			);
@@ -184,6 +193,22 @@
 				929E8D0A21EB363A000769F6 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		92F5B2EC21ED0334009A902E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				92F5B2ED21ED03A0009A902E /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		92F5B2EF21ED03AD009A902E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92F5B2F021ED03F0009A902E /* CanadaInfoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E106EBBF88C2A907F194CDD0 /* Pods */ = {
@@ -305,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				929E8D1821EB363A000769F6 /* LaunchScreen.storyboard in Resources */,
+				92F5B2F321ED04CB009A902E /* placeholder.png in Resources */,
 				929E8D1521EB363A000769F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,9 +407,11 @@
 			files = (
 				929E8D1321EB363A000769F6 /* InterviewAssignment.xcdatamodeld in Sources */,
 				9282FE5B21EB67190098883A /* listTableViewCell.swift in Sources */,
+				92F5B2F121ED03F0009A902E /* CanadaInfoModel.swift in Sources */,
 				929E8D0D21EB363A000769F6 /* ViewController.swift in Sources */,
 				929E8D0B21EB363A000769F6 /* AppDelegate.swift in Sources */,
 				929E8D4121EB3C70000769F6 /* ServiceManager.swift in Sources */,
+				92F5B2EE21ED03A0009A902E /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
