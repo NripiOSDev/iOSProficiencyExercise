@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import MBProgressHUD
+
 class ViewController: UIViewController {
     
     var listTableview: UITableView!
@@ -41,18 +42,18 @@ class ViewController: UIViewController {
     // MARK: - Api call for geting data
     func getImagesData(apiUrl: String) -> Void{
         self.showHud(Constant.LoaderMessage.message)
-        ServiceManager.sharedInstance.getallDataFromApi(contenturl:apiUrl, getCompleted: { (responseData, responseCode) in
+        ServiceManager.sharedInstance.getallDataFromApi(contenturl:apiUrl, getRequestCompleted: { (responseData, responseCode) in
             
             if responseCode == Constant.ApiResponseCode.Success{
-                if let responseDictDataArray = responseData[Constant.ApiKeys.rows] as? [[String : AnyObject]]{
-                    self.title = responseData[Constant.ApiKeys.title] as? String
+                if let responseDict = responseData[Constant.ApiKeys.rows] as? [[String : AnyObject]]{
                     var model = [CanadaInfoModel.CanadaData]()
-                    model = responseDictDataArray.compactMap{ (dictionary) in
+                    model = responseDict.compactMap{ (dictionary) in
                         return CanadaInfoModel.CanadaData(dictionary)
                     }
                     self.arrDataList = model
                 }
                 DispatchQueue.main.async {
+                    self.title = responseData[Constant.ApiKeys.title] as? String
                     self.listTableview.reloadData()
                     self.hideHUD()
                 }
@@ -73,6 +74,10 @@ class ViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrDataList.count > 0 ? 1 : 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrDataList.count

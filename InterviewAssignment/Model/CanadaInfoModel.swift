@@ -9,7 +9,6 @@
 import UIKit
 
 class CanadaInfoModel: NSObject {
-
     struct CanadaData {
         var title: String
         var description: String

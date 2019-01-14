@@ -15,7 +15,6 @@ class listTableViewCell: UITableViewCell {
     let lblTitle = UILabel()
     let lblDescription = UILabel()
     
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupAllSubViews()
@@ -39,7 +38,7 @@ class listTableViewCell: UITableViewCell {
         lblTitle.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         lblTitle.topAnchor.constraint(equalTo: imgUser.bottomAnchor).isActive = true
         lblTitle.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        lblDescription.font = UIFont(name: "Helvetica", size: 19)
+        lblDescription.font = UIFont(name: "Helvetica", size: 20)
         lblTitle.numberOfLines = 0
         
         // configure titleLabel
@@ -51,7 +50,7 @@ class listTableViewCell: UITableViewCell {
         lblDescription.topAnchor.constraint(equalTo: lblTitle.bottomAnchor).isActive = true
         lblDescription.numberOfLines = 0
         lblDescription.font = UIFont(name: "Helvetica", size: 16)
-        lblDescription.textColor = .lightGray
+        lblDescription.textColor = .gray
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -9,9 +9,7 @@
 import UIKit
 
 class Constant: NSObject {
-
-    //MARK: - All Constant Values
-        struct ApiUrls {
+     struct ApiUrls {
         static let baseUrl = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
       }
       struct ApiKeys {
@@ -23,7 +21,7 @@ class Constant: NSObject {
      struct LoaderMessage {
         static let message = ""
      }
-      struct TableViewKeys {
+     struct TableViewKeys {
         static let cellReuseIdentifier = "customCell"
         static let cellEstimatedHeight = 100
       }

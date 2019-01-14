@@ -9,7 +9,6 @@ import UIKit
 
 let sharedSession = URLSession.shared
 class ServiceManager: NSObject {
-    
     static let sharedInstance = ServiceManager()
     
     fileprivate override init() {
@@ -29,12 +28,11 @@ class ServiceManager: NSObject {
         return NSMutableURLRequest()
     }
     
-    func getallDataFromApi(contenturl: String, getCompleted : @escaping ( _ jsonDict:[String: AnyObject],  _ msg: NSInteger) -> ()) {
+    func getallDataFromApi(contenturl: String, getRequestCompleted : @escaping ( _ jsonDict:[String: AnyObject],  _ msg: NSInteger) -> ()) {
         let urlRequest = CreateGetUrlRequest(contenturl)
         let task = sharedSession.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             if error != nil{
-                //Handle error
-                
+                print("Error description\(String(describing: error?.localizedDescription))")
             }else{
                 let httpResponse = response as! HTTPURLResponse
                 
@@ -49,10 +47,10 @@ class ServiceManager: NSObject {
                             }
                             responseData = try JSONSerialization.jsonObject(with: modifiedDataInUTF8Format, options: .allowFragments)
                             if let responseDictData = responseData as? [String : AnyObject]{
-                                getCompleted(responseDictData, httpResponse.statusCode)
+                                getRequestCompleted(responseDictData, httpResponse.statusCode)
                             }
                         }else{
-                            getCompleted([:], httpResponse.statusCode)
+                            getRequestCompleted([:], httpResponse.statusCode)
                         }
                     }catch{
                         responseData = nil
