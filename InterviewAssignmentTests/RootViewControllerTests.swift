@@ -31,7 +31,7 @@ class RootViewControllerTests: XCTestCase {
         dataSource = ds
     }
     func testTableViewHasCells() {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
         
         XCTAssertNotNil(cell,
                         "TableView should be able to dequeue cell with identifier: 'Cell'")
@@ -47,7 +47,17 @@ class RootViewControllerTests: XCTestCase {
         XCTAssertEqual(controller.arrDataList.count, 0,
                        "DataSource should have correct number of records")
     }
-
+    
+    func testCellLabelHasTitle() {
+        let customCell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
+        XCTAssertNotNil(customCell.lblTitle.text, "No value found for title")
+    }
+    
+    func testNavigationHasTitle() {
+        
+        XCTAssertNotNil(controller.title, "No description found for this cell object")
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

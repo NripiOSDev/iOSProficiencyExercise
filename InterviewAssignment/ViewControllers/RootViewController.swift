@@ -61,7 +61,6 @@ class RootViewController: UIViewController {
         listTableview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         listTableview.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         
-        messageLabel.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
         messageLabel.textAlignment = .center
         messageLabel.text = Constant.DefaultValue.tableviewEmptyMessage
         messageLabel.numberOfLines=1
@@ -71,6 +70,9 @@ class RootViewController: UIViewController {
         self.view.addSubview(messageLabel)
         
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        messageLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         messageLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.centerXAnchor.constraint(equalTo: messageLabel.superview!.centerXAnchor).isActive = true
@@ -85,11 +87,13 @@ class RootViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
+    // MARK: -  Api call method
     func apiCallForData() -> Void {
         self.showHud(Constant.LoaderMessage.message)
         rootViewModel.getImagesData(apiUrl: Constant.ApiUrls.baseUrl)
     }
     
+    // MARK: -  Reachability methods
     private func showOfflinePage() -> Void {
         let alertView = UIAlertController(title: Constant.ErrorMessage.messageTitle, message: Constant.ErrorMessage.messageText, preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: Constant.ErrorMessage.messageActionText, style: .default, handler: nil))
@@ -152,12 +156,13 @@ extension UIViewController {
         hud.bezelView.style = .blur
         hud.isUserInteractionEnabled = true
     }
-    
+
     func hideHUD() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 
+// MARK: - ViewModel method
 extension RootViewController : RootViewModelDelegate {
     func rootViewModelRecieveData(_ infoData: [CanadaInfoModel.CanadaData], _ navigattionTitle: String, _ error: String) {
         if (error != Constant.ErrorMessage.messageText) {
