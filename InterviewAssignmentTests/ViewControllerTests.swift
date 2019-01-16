@@ -1,5 +1,5 @@
 //
-//  ViewControllerTests.swift
+//  RootViewControllerTests.swift
 //  InterviewAssignmentTests
 //
 //  Created by Nripendra singh on 14/01/19.
@@ -9,19 +9,19 @@
 import XCTest
 @testable import InterviewAssignment
 
-class ViewControllerTests: XCTestCase {
-    var controller: ViewController!
+class RootViewControllerTests: XCTestCase {
+    var controller: RootViewController!
     var tableView: UITableView!
     var dataSource: UITableViewDataSource!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        guard let vc = ViewController() as? UIViewController  else {
-                return XCTFail("Could not instantiate ViewController from main storyboard")
+        guard let vc = RootViewController() as? UIViewController  else {
+                return XCTFail("Could not instantiate RootViewController from main storyboard")
         }
         
-        controller = vc as? ViewController
+        controller = vc as? RootViewController
         controller.loadViewIfNeeded()
         tableView = controller.listTableview
         

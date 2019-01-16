@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		9282FE5B21EB67190098883A /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9282FE5A21EB67190098883A /* listTableViewCell.swift */; };
 		929E8D0B21EB363A000769F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D0A21EB363A000769F6 /* AppDelegate.swift */; };
-		929E8D0D21EB363A000769F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D0C21EB363A000769F6 /* ViewController.swift */; };
+		929E8D0D21EB363A000769F6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D0C21EB363A000769F6 /* RootViewController.swift */; };
 		929E8D1321EB363A000769F6 /* InterviewAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D1121EB363A000769F6 /* InterviewAssignment.xcdatamodeld */; };
 		929E8D1521EB363A000769F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929E8D1421EB363A000769F6 /* Assets.xcassets */; };
 		929E8D1821EB363A000769F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929E8D1621EB363A000769F6 /* LaunchScreen.storyboard */; };
 		929E8D2321EB363A000769F6 /* InterviewAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D2221EB363A000769F6 /* InterviewAssignmentTests.swift */; };
 		929E8D2E21EB363A000769F6 /* InterviewAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D2D21EB363A000769F6 /* InterviewAssignmentUITests.swift */; };
 		929E8D4121EB3C70000769F6 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E8D4021EB3C70000769F6 /* ServiceManager.swift */; };
+		92C5EF8721EFB39B004B7A5D /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5EF8621EFB39B004B7A5D /* RootViewModel.swift */; };
+		92C5EF8A21EFB40F004B7A5D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5EF8921EFB40F004B7A5D /* NetworkManager.swift */; };
 		92F5B2EE21ED03A0009A902E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5B2ED21ED03A0009A902E /* Constant.swift */; };
 		92F5B2F121ED03F0009A902E /* CanadaInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5B2F021ED03F0009A902E /* CanadaInfoModel.swift */; };
 		92F5B2F321ED04CB009A902E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 92F5B2F221ED04CB009A902E /* placeholder.png */; };
@@ -47,7 +49,7 @@
 		9282FE5A21EB67190098883A /* listTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		929E8D0721EB363A000769F6 /* InterviewAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929E8D0A21EB363A000769F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		929E8D0C21EB363A000769F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		929E8D0C21EB363A000769F6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		929E8D1221EB363A000769F6 /* InterviewAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterviewAssignment.xcdatamodel; sourceTree = "<group>"; };
 		929E8D1421EB363A000769F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929E8D1721EB363A000769F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		929E8D2D21EB363A000769F6 /* InterviewAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAssignmentUITests.swift; sourceTree = "<group>"; };
 		929E8D2F21EB363A000769F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		929E8D4021EB3C70000769F6 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		92C5EF8621EFB39B004B7A5D /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		92C5EF8921EFB40F004B7A5D /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		92F5B2ED21ED03A0009A902E /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		92F5B2F021ED03F0009A902E /* CanadaInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanadaInfoModel.swift; sourceTree = "<group>"; };
 		92F5B2F221ED04CB009A902E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -124,11 +128,13 @@
 		929E8D0921EB363A000769F6 /* InterviewAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				92C5EF8821EFB3D9004B7A5D /* Utils */,
 				92F5B2EF21ED03AD009A902E /* Model */,
 				92F5B2EC21ED0334009A902E /* Constant */,
 				929E8D3B21EB39A2000769F6 /* ServiceManager */,
 				929E8D3F21EB3AE1000769F6 /* AppDelegate */,
 				929E8D3E21EB3AB9000769F6 /* ViewControllers */,
+				92C5EF8521EFB355004B7A5D /* ViewModel */,
 				929E8D3C21EB39F1000769F6 /* Storyboard */,
 				929E8D3D21EB3A07000769F6 /* MiscFiles */,
 				929E8D1921EB363A000769F6 /* Info.plist */,
@@ -185,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9282FE5A21EB67190098883A /* listTableViewCell.swift */,
-				929E8D0C21EB363A000769F6 /* ViewController.swift */,
+				929E8D0C21EB363A000769F6 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +202,22 @@
 				929E8D0A21EB363A000769F6 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		92C5EF8521EFB355004B7A5D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92C5EF8621EFB39B004B7A5D /* RootViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92C5EF8821EFB3D9004B7A5D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				92C5EF8921EFB40F004B7A5D /* NetworkManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		92F5B2EC21ED0334009A902E /* Constant */ = {
@@ -366,6 +388,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-InterviewAssignment/Pods-InterviewAssignment-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -373,6 +396,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -408,12 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C5EF8A21EFB40F004B7A5D /* NetworkManager.swift in Sources */,
 				929E8D1321EB363A000769F6 /* InterviewAssignment.xcdatamodeld in Sources */,
 				9282FE5B21EB67190098883A /* listTableViewCell.swift in Sources */,
 				92F5B2F121ED03F0009A902E /* CanadaInfoModel.swift in Sources */,
-				929E8D0D21EB363A000769F6 /* ViewController.swift in Sources */,
+				929E8D0D21EB363A000769F6 /* RootViewController.swift in Sources */,
 				929E8D0B21EB363A000769F6 /* AppDelegate.swift in Sources */,
 				929E8D4121EB3C70000769F6 /* ServiceManager.swift in Sources */,
+				92C5EF8721EFB39B004B7A5D /* RootViewModel.swift in Sources */,
 				92F5B2EE21ED03A0009A902E /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
