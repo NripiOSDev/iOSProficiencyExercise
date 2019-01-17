@@ -15,6 +15,7 @@ class RootViewController: UIViewController {
     var isReachableConnection: Bool = false
     var listTableview: UITableView!
     var messageLabel: UILabel = UILabel()
+    var arrDataTest = [String]()
     var arrDataList = [CanadaInfoModel.CanadaData]()
     var rootViewModel = RootViewModel()
     let network: NetworkManager = NetworkManager.sharedInstance
@@ -29,6 +30,13 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.checkInternetConnection()
+        rootViewModel.delegate = self
+        self.setupTableView()
+    }
+    
+    func checkInternetConnection() -> Void{
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
@@ -39,11 +47,8 @@ class RootViewController: UIViewController {
         network.reachability.whenUnreachable = { reachability in
             self.showOfflinePage()
         }
-        
-        rootViewModel.delegate = self
-        self.setupTableView()
     }
-    
+
     // MARK: -  Setup TableView
     func setupTableView() -> Void{
         listTableview = UITableView()
@@ -134,12 +139,14 @@ extension RootViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.TableViewKeys.cellReuseIdentifier, for: indexPath) as! listTableViewCell
         cell.selectionStyle = .none
-        let model = arrDataList[(indexPath as NSIndexPath).row]
-        cell.lblTitle.text = model.title
-        cell.lblDescription.text = model.description
-        let url = URL(string: model.imageUrl)
-        let image = UIImage(named: "placeholder.png")
-        cell.imgUser.kf.setImage(with: url, placeholder: image)
+        if (arrDataList.count > 0) {
+            let model = arrDataList[(indexPath as NSIndexPath).row]
+            cell.lblTitle.text = model.title
+            cell.lblDescription.text = model.description
+            let url = URL(string: model.imageUrl)
+            let image = UIImage(named: "placeholder.png")
+            cell.imgUser.kf.setImage(with: url, placeholder: image)
+        }
         
         return cell
     }

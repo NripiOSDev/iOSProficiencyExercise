@@ -14,6 +14,7 @@ class RootViewControllerTests: XCTestCase {
     var tableView: UITableView!
     var dataSource: UITableViewDataSource!
 
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -24,12 +25,17 @@ class RootViewControllerTests: XCTestCase {
         controller = vc as? RootViewController
         controller.loadViewIfNeeded()
         tableView = controller.listTableview
-        
+
         guard let ds = tableView.dataSource else {
             return XCTFail("Controller's table view should have a data source")
         }
         dataSource = ds
+        
+        for number in 0..<14 {
+            controller.arrDataTest.append("canada: \(number)")
+        }
     }
+    
     func testTableViewHasCells() {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
         
@@ -44,18 +50,26 @@ class RootViewControllerTests: XCTestCase {
     }
     
     func testDataSourceHasRecords() {
-        XCTAssertEqual(controller.arrDataList.count, 0,
+        XCTAssertEqual(controller.arrDataTest.count, 14,
                        "DataSource should have correct number of records")
     }
     
     func testCellLabelHasTitle() {
         let customCell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
-        XCTAssertNotNil(customCell.lblTitle.text, "No value found for title")
+        XCTAssertEqual(customCell.lblTitle.text, nil,
+                       "No description found for title")
     }
     
     func testNavigationHasTitle() {
-        
-        XCTAssertNotNil(controller.title, "No description found for this cell object")
+        //XCTAssertNotNil(controller.title, "No description found for this cell object")
+        XCTAssertEqual(controller.title, nil,
+                       "No description found for title")
+    }
+    
+    func testCellForRow() {
+        let cell = dataSource.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(cell.textLabel?.text, nil,
+                       "The first cell don't have value")
     }
     
     override func tearDown() {
