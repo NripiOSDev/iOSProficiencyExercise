@@ -32,7 +32,7 @@ class ServiceManager: NSObject {
         let urlRequest = CreateGetUrlRequest(contenturl)
         let task = sharedSession.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             if error != nil{
-                print("Error description\(String(describing: error?.localizedDescription))")
+                //print("Error description\(String(describing: error?.localizedDescription))")
             }else{
                 let httpResponse = response as! HTTPURLResponse
                 
@@ -42,7 +42,6 @@ class ServiceManager: NSObject {
                         if httpResponse.statusCode == Constant.ApiResponseCode.Success {
                             let responseStrInISOLatin = String(data:dataExist, encoding: String.Encoding.isoLatin1)
                             guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
-                                print("could not convert data to UTF-8 format")
                                 return
                             }
                             responseData = try JSONSerialization.jsonObject(with: modifiedDataInUTF8Format, options: .allowFragments)

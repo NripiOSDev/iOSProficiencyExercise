@@ -22,7 +22,7 @@ class RootViewController: UIViewController {
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(RootViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.addTarget(self, action: #selector(RootViewController.handleRefresh(_:)), for: UIControl.Event.valueChanged)
         refreshControl.tintColor = .red
         return refreshControl
     }()
@@ -55,7 +55,7 @@ class RootViewController: UIViewController {
         listTableview.dataSource = self
         listTableview.separatorStyle = .none
         listTableview.estimatedRowHeight = CGFloat(Constant.TableViewKeys.cellEstimatedHeight)
-        listTableview.rowHeight = UITableViewAutomaticDimension
+        listTableview.rowHeight = UITableView.automaticDimension
         listTableview.register(listTableViewCell.self, forCellReuseIdentifier:Constant.TableViewKeys.cellReuseIdentifier)
         self.view.addSubview(listTableview)
         self.listTableview.addSubview(self.refreshControl)
@@ -78,8 +78,8 @@ class RootViewController: UIViewController {
         messageLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        messageLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        //messageLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        //messageLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         messageLabel.centerXAnchor.constraint(equalTo: messageLabel.superview!.centerXAnchor).isActive = true
         messageLabel.centerYAnchor.constraint(equalTo: messageLabel.superview!.centerYAnchor).isActive = true
     }
