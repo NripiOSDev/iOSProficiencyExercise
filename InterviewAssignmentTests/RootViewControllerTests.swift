@@ -72,6 +72,29 @@ class RootViewControllerTests: XCTestCase {
                        "The first cell don't have value")
     }
     
+    func testGettingJSON() {
+        let expect = expectation(description: "Expecting a JSON data not nil")
+        
+       ServiceManager.sharedInstance.getallDataFromApi(contenturl:Constant.ApiUrls.baseUrl, getRequestCompleted: { (responseData, responseCode) in
+        XCTAssert(responseCode == Constant.ApiResponseCode.Success, "Api request is success")
+        if let responseDict = responseData[Constant.ApiKeys.rows] as? [[String : AnyObject]]{
+            XCTAssertNil(nil)
+            XCTAssertNotNil(responseDict)
+            expect.fulfill()
+        }else{
+            XCTAssertNil(responseData)
+        }
+     })
+        
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                XCTFail("error: \(error)")
+            }
+        }
+    }
+    
+
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

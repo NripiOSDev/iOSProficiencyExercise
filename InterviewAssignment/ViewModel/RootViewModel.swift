@@ -18,7 +18,7 @@ class RootViewModel: NSObject {
     
     // MARK: - Api call for geting data
     func getImagesData(apiUrl: String) -> Void{
-        ServiceManager.sharedInstance.getallDataFromApi(contenturl:apiUrl, getRequestCompleted: { (responseData, responseCode) in
+        ServiceManager.sharedInstance.getallDataFromApi(contenturl:apiUrl, getRequestCompleted: { [weak self] (responseData, responseCode) in
             
             if responseCode == Constant.ApiResponseCode.Success{
                 if let responseDict = responseData[Constant.ApiKeys.rows] as? [[String : AnyObject]]{
@@ -27,11 +27,11 @@ class RootViewModel: NSObject {
                         return CanadaInfoModel.CanadaData(dictionary)
                     }
                     let navTitle = responseData[Constant.ApiKeys.title] as? String
-                    self.delegate?.rootViewModelRecieveData(model,navTitle ?? Constant.DefaultValue.text, Constant.DefaultValue.text )
+                    self?.delegate?.rootViewModelRecieveData(model,navTitle ?? Constant.DefaultValue.text, Constant.DefaultValue.text )
                 }
             }
             else{
-                self.delegate?.rootViewModelRecieveData([CanadaInfoModel.CanadaData](),Constant.DefaultValue.text ,Constant.ErrorMessage.messageText)
+                self?.delegate?.rootViewModelRecieveData([CanadaInfoModel.CanadaData](),Constant.DefaultValue.text ,Constant.ErrorMessage.messageText)
             }
         })
     }
