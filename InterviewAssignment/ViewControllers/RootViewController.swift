@@ -141,14 +141,18 @@ extension RootViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         if (arrDataList.count > 0) {
             let model = arrDataList[(indexPath as NSIndexPath).row]
-            cell.lblTitle.text = model.title
-            cell.lblDescription.text = model.description
-            let url = URL(string: model.imageUrl)
-            let image = UIImage(named: "placeholder.png")
-            cell.imgUser.kf.setImage(with: url, placeholder: image)
+            if !model.title.isEmpty && !model.description.isEmpty && !model.imageUrl.isEmpty {
+                cell.lblTitle.text = model.title
+                cell.lblDescription.text = model.description
+                let url = URL(string: model.imageUrl)
+                let image = UIImage(named: "placeholder.png")
+                cell.imgUser.kf.setImage(with: url, placeholder: image)
+                return cell
+            }else{
+                return UITableViewCell()
+            }
         }
-        
-        return cell
+        return UITableViewCell()
     }
 }
 
