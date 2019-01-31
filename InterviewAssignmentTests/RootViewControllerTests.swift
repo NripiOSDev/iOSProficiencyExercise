@@ -24,6 +24,7 @@ class RootViewControllerTests: XCTestCase {
         
         controller = vc as? RootViewController
         controller.loadViewIfNeeded()
+        controller.setupTableView()
         tableView = controller.listTableview
 
         guard let ds = tableView.dataSource else {
@@ -85,7 +86,6 @@ class RootViewControllerTests: XCTestCase {
             XCTAssertNil(responseData)
         }
      })
-        
         waitForExpectations(timeout: 10) { (error) in
             if let error = error {
                 XCTFail("error: \(error)")
@@ -93,7 +93,10 @@ class RootViewControllerTests: XCTestCase {
         }
     }
     
-
+    func testForPlaceholderImage() {
+        let image = UIImage(named: "placeholder.png")
+        XCTAssertNotNil(image)
+    }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.

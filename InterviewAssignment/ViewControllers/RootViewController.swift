@@ -30,10 +30,9 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.view.backgroundColor = .white
         self.checkInternetConnection()
         rootViewModel.delegate = self
-        self.setupTableView()
     }
     
     func checkInternetConnection() -> Void{
@@ -178,10 +177,13 @@ extension RootViewController : RootViewModelDelegate {
     func rootViewModelRecieveData(_ infoData: [CanadaInfoModel.CanadaData], _ navigattionTitle: String, _ error: String) {
         if (error != Constant.ErrorMessage.messageText) {
             self.arrDataList = infoData
-            DispatchQueue.main.async {
-                self.title = navigattionTitle
-                self.listTableview.reloadData()
-                self.hideHUD()
+            if(self.arrDataList.count > 0){
+                DispatchQueue.main.async {
+                    self.setupTableView()
+                    self.title = navigattionTitle
+                    self.listTableview.reloadData()
+                    self.hideHUD()
+                }
             }
         }
         else{
