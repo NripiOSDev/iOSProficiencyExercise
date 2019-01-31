@@ -15,7 +15,7 @@ class NetworkManager: NSObject {
     
     static let sharedInstance: NetworkManager = { return NetworkManager() }()
     
-    override init() {
+    private override init() {
         super.init()
         reachability = Reachability()!
         NotificationCenter.default.addObserver(

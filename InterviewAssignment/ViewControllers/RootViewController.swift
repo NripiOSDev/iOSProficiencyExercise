@@ -12,12 +12,12 @@ import MBProgressHUD
 
 class RootViewController: UIViewController {
     
-    var isReachableConnection: Bool = false
+    private var isReachableConnection: Bool = false
     var listTableview: UITableView!
-    var messageLabel: UILabel = UILabel()
+    private var messageLabel: UILabel = UILabel()
     var arrDataTest = [String]()
-    var arrDataList = [CanadaInfoModel.CanadaData]()
-    var rootViewModel = RootViewModel()
+    private var arrDataList = [CanadaInfoModel.CanadaData]()
+    private var rootViewModel = RootViewModel()
     let network: NetworkManager = NetworkManager.sharedInstance
     
     lazy var refreshControl: UIRefreshControl = {
@@ -55,7 +55,7 @@ class RootViewController: UIViewController {
         listTableview.separatorStyle = .none
         listTableview.estimatedRowHeight = CGFloat(Constant.TableViewKeys.cellEstimatedHeight)
         listTableview.rowHeight = UITableView.automaticDimension
-        listTableview.register(listTableViewCell.self, forCellReuseIdentifier:Constant.TableViewKeys.cellReuseIdentifier)
+        listTableview.register(ListTableViewCell.self, forCellReuseIdentifier:Constant.TableViewKeys.cellReuseIdentifier)
         self.view.addSubview(listTableview)
         self.listTableview.addSubview(self.refreshControl)
         
@@ -136,7 +136,7 @@ extension RootViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.TableViewKeys.cellReuseIdentifier, for: indexPath) as! listTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.TableViewKeys.cellReuseIdentifier, for: indexPath) as! ListTableViewCell
         cell.selectionStyle = .none
         if (arrDataList.count > 0) {
             let model = arrDataList[(indexPath as NSIndexPath).row]

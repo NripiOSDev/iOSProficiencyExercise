@@ -38,7 +38,7 @@ class RootViewControllerTests: XCTestCase {
     }
     
     func testTableViewHasCells() {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! ListTableViewCell
         
         XCTAssertNotNil(cell,
                         "TableView should be able to dequeue cell with identifier: 'Cell'")
@@ -56,7 +56,7 @@ class RootViewControllerTests: XCTestCase {
     }
     
     func testCellLabelHasTitle() {
-        let customCell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! listTableViewCell
+        let customCell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! ListTableViewCell
         XCTAssertEqual(customCell.lblTitle.text, nil,
                        "No description found for title")
     }

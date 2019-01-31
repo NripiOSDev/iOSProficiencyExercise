@@ -9,7 +9,7 @@
 
 import UIKit
 
-class listTableViewCell: UITableViewCell {
+class ListTableViewCell: UITableViewCell {
     
     let imgUser = UIImageView()
     let lblTitle = UILabel()

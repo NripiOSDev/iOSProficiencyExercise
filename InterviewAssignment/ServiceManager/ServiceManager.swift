@@ -11,7 +11,7 @@ let sharedSession = URLSession.shared
 class ServiceManager: NSObject {
     static let sharedInstance = ServiceManager()
     
-    fileprivate override init() {
+    private override init() {
         super.init()
     }
     
